@@ -36,12 +36,11 @@ def main(args):
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         objects = detector.detect(frame)
-        objects = [obj for obj in objects if obj['label'] == 'person']
+        objects = [obj for obj in objects if obj['label'] == 'person' and obj['score'] > 50]
 
         if len(objects) > 0:
-            green_led(on=True)
-        else:
-            green_led(on=False)
+            print("There is a person at: ", len(objects))
+            print(objects)
 
         end = time.time()
         print('FPS: {0:0.2f}'.format(1 / (end - start)))

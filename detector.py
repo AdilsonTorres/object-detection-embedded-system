@@ -27,8 +27,8 @@ class Detector:
     _dataset = "pascal"
     _confidence = 0.5
     _nms_thresh = 0.4
-    _cfg = "cfg/yolov3.cfg"
-    _weights = "weights/yolov3.weights"
+    _cfg = "cfg/yolov3-tiny.cfg"
+    _weights = "weights/yolov3-tiny.weights"
     _resolution = "416"
     _cuda = False
     _num_classes = 80
